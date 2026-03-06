@@ -11,6 +11,7 @@ git pull	   Забрать изменения из репозитория
 
 
 
+
 git config --global user.email "mihail@mail.ru"   -мой email
 git config --global user.name "Mihail"            -мое имя
 git commit -m "New"
@@ -25,3 +26,6 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/SpaskihMD/dev_lessen.git
 git push -u origin main
+
+
+git remote set-url origin https://github.com/SpaskihMD/dev_lessen.git
