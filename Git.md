@@ -1,31 +1,98 @@
-Команда	       Что делает
-git init	   Инициализировать репозиторий
-git add .	   Добавить файлы для следующего коммита (если в конеце добавить точку то выберет все файлы)
-        . - все файлы
-        или надо добавить файлы просто пишем путь к файлам
-git config --global user.name "Tvoe Imya"   Говорим git кто делает изменения
-git commit	   Зафиксировать изменения    git commit -m "сообщение к комиту"
-git push	   Отправить коммиты в репозиторий
-git pull	   Забрать изменения из репозитория
+# 📦 Git — краткий конспект
 
+## 🔧 Настройка Git
 
+```bash
+git config --global user.name "Твое Имя"
+git config --global user.email "tvoi@email.com"
+```
 
+---
 
+## 🚀 Создание репозитория
 
-git config --global user.email "mihail@mail.ru"   -мой email
-git config --global user.name "Mihail"            -мое имя
-git commit -m "New"
-git config --global --list                        -проверка что все сохранилось
+```bash
+git init                    # создать новый репозиторий
+git clone ссылка            # скопировать удалённый репозиторий
+```
 
+---
 
-команды от GitHub
-echo "# dev_lessen" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/SpaskihMD/dev_lessen.git
-git push -u origin main
+## 📁 Работа с изменениями
 
+```bash
+git status                  # проверить статус
+git add имя_файла           # добавить файл в отслеживание
+git add .                   # добавить всё
+git commit -m "сообщение"   # сохранить изменения
+```
 
-git remote set-url origin https://github.com/SpaskihMD/dev_lessen.git
+---
+
+## 🌿 Ветки
+
+```bash
+git branch                  # список веток
+git branch имя_ветки        # создать ветку
+git checkout имя_ветки      # переключиться на ветку
+git checkout -b имя_ветки   # создать и переключиться
+git merge имя_ветки         # слить ветку в текущую
+git branch -d имя_ветки     # удалить ветку
+```
+
+---
+
+## ☁️ Работа с удалённым репозиторием
+
+```bash
+git remote add origin ссылка    # связать с удалённым репозиторием
+git push -u origin main         # отправить в первый раз
+git push                        # отправить изменения
+git pull                        # забрать изменения
+```
+
+---
+
+## 📜 Просмотр истории
+
+```bash
+git log                 # история коммитов
+git log --oneline       # краткая история
+git diff                # изменения до commit
+```
+
+---
+
+## 🔄 Отмена изменений
+
+```bash
+git reset HEAD имя_файла    # убрать из индекса (add)
+git checkout -- имя_файла   # отменить изменения в файле
+git reset --hard HEAD~1     # откатить последний коммит
+```
+
+---
+
+## 📝 Короткая шпаргалка
+
+| Действие | Команда |
+|----------|---------|
+| Создать репозиторий | `git init` |
+| Добавить файл | `git add .` |
+| Сохранить изменения | `git commit -m "текст"` |
+| Отправить на сервер | `git push` |
+| Забрать с сервера | `git pull` |
+| Создать ветку | `git checkout -b ветка` |
+| Слить ветку | `git merge ветка` |
+| Удалить ветку | `git branch -d ветка` |
+
+---
+
+## 💡 Основная схема работы
+
+```
+git add .          →  git commit -m "..."  →  git push
+   ↓                        ↓                    ↓
+добавить          сохранить                отправить
+в отслеживание    локально                 на сервер
+```
