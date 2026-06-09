@@ -1,482 +1,256 @@
-**Roadmap для DevOps-инженера 2026 года** 
+**Карта обучения DevOps-инженера** с дорожной картой (Roadmap), этапами, стикерами для трекинга прогресса и таймингами.  
 
-```markdown
-# 🗺️ Полный Roadmap DevOps-инженера 2026 + План Обучения
-
-## 🎯 Ключевые тренды 2026 года
-
-Перед стартом — понимаем, куда движется индустрия:
-
-| Тренд | Почему важно |
-|-------|---------------|
-| 🤖 **AI-native DevOps** | ИИ пишет код, деплоит и фиксит сам |
-| 🔐 **Security as Code** | Безопасность встроена в каждый этап (DevSecOps) |
-| 🐳 **Бессерверные технологии (Serverless)** | Меньше забот об инфраструктуре |
-| 🌍 **Multi-cloud / Hybrid** | Работа с AWS, Azure, GCP одновременно |
-| ⚡ **GitOps** | Вся инфраструктура через Git (ArgoCD, Flux) |
-| 📦 **Внутренние платформы (IDP)** | DevOps строит платформы для разработчиков |
+Я разделил путь на **7 логических блоков** — от основ до продвинутых практик. Для каждого этапа указаны:
+- **Примерное время** (в неделях при занятиях 15–20 ч/нед).
+- **Стикеры-чекины** (что можно наклеить на доску прогресса).
+- **Подпункты** для детального изучения.
 
 ---
 
-## 🧱 Фундамент (1–3 месяца) — обязательная база
-
-> 💡 **Без этих знаний ты не сможешь двигаться дальше**
-
-### 🐧 Linux и командная строка
-
-```bash
-# Основные темы
-- Установка Ubuntu/Debian/CentOS
-- Файловая система (/, /home, /etc, /var, /tmp)
-- Основные команды: ls, cd, cp, mv, rm, find, grep, awk, sed, chmod, chown
-- Работа с процессами: ps, top, htop, kill, systemctl
-- Сетевые команды: netstat, ss, curl, wget, ping, traceroute
-- Текстовые редакторы: vim/nano
-```
-
-**🎓 Ресурсы:**
-- Видеокурс: "Linux для начинающих" на YouTube
-- Книга: "Как устроен Linux" (Брайан Уорд)
-
-### 🐍 Python + Bash (Автоматизация)
-
-```python
-# Python обязательно знать:
-- Переменные, циклы, функции, классы
-- Работа с файлами (open, read, write)
-- Модули: os, sys, subprocess, requests, json, yaml
-- Написание простых скриптов для автоматизации
-```
-
-```bash
-# Bash:
-- Переменные, циклы for/while, функции
-- Условные операторы if/else
-- Работа с кодом возврата ($?)
-- Планировщик cron
-```
-
-**📚 Практическое задание:**
-Написать скрипт, который проверяет свободное место на диске и отправляет уведомление в Telegram, если места < 10%.
-
-### 🌐 Сети (Networking)
+## 🗺 Общая карта обучения (Roadmap)
 
 ```
-- OSI и TCP/IP модели
-- IP-адресация, маски подсетей, CIDR
-- DNS, HTTP/HTTPS, SSH, FTP
-- Порты: 22 (SSH), 80 (HTTP), 443 (HTTPS), 3306 (MySQL)
-- Балансировщики: Nginx, HAProxy (базово)
-- Брандмауэры: iptables, ufw
-```
-
-### 📦 Git (система контроля версий)
-
-```bash
-git init, add, commit, push, pull, clone
-git branch, merge, rebase
-git stash, reset, revert
-git flow / GitHub Flow
-Работа с Pull Requests
+1. Основы ОС и сетей    (4–5 нед)
+        ↓
+2. Основы Linux + Bash   (6–8 нед)
+        ↓
+3. Системы контроля версий (Git) (2–3 нед)
+        ↓
+4. CI/CD (GitLab CI / GitHub Actions / Jenkins) (4–5 нед)
+        ↓
+5. Контейнеризация (Docker) + реестры (3–4 нед)
+        ↓
+6. Оркестрация (Kubernetes) (8–12 нед)
+        ↓
+7. Инфраструктура как код (Terraform) + конфигурация (Ansible) (5–7 нед)
+        ↓
+8. Мониторинг и логи (Prometheus, Grafana, ELK) (4–5 нед)
+        ↓
+9. Облака (AWS/Azure/GCP) + CI/CD интеграция (6–8 нед)
+        ↓
+10. Безопасность, резервное копирование, продвинутые практики (4–6 нед)
 ```
 
 ---
 
-## 🐳 Контейнеризация (2–4 месяца)
+## 📋 Детальные этапы с подпунктами и таймингами
 
-### Docker — основа современной разработки
+### **1. Основы ОС и компьютерных сетей**  
+⏱ 4–5 недель  
+🎯 Результат: понимаю, как пакет идёт по сети, что такое процесс, память, диски.
 
-```dockerfile
-# Темы:
-- Dockerfile (FROM, RUN, COPY, CMD, ENTRYPOINT)
-- Образы и слои (image layers)
-- docker build, run, ps, exec, logs
-- Docker Compose (многоконтейнерные приложения)
-- Docker volumes (персистентность)
-- Docker networks (bridge, host, none, overlay)
-- Docker Registry / Hub
-- Best practices (многостадийная сборка, non-root user)
-```
+**Подпункты:**
+- Модели OSI и TCP/IP
+- IP-адресация, подсети (CIDR), NAT, DNS, HTTP/HTTPS
+- Порты, сокеты, TCP vs UDP
+- Основы работы ОС (процессы, потоки, ОЗУ, диски, файловые системы)
 
-**🎓 Проект:**
-Запустить WordPress + MySQL через Docker Compose с volumes для хранения данных.
+**Стикеры (наклейки для доски)**  
+✅ TCP/IP и OSI  
+✅ IP, маска, шлюз  
+✅ DNS, HTTP  
+✅ Процессы и память  
 
-### ☸️ Kubernetes (K8s) — оркестрация контейнеров
+---
 
-```yaml
-# Основные концепты:
+### **2. Linux + Bash**  
+⏱ 6–8 недель  
+🎯 Результат: уверенно работаю в CLI, пишу скрипты.
+
+**Подпункты:**
+- Установка Linux (Ubuntu/CentOS), работа без GUI
+- Файловая система (/proc, /sys, права, ownership)
+- Команды: ls, cd, grep, awk, sed, find, ps, top, netstat, systemctl, journalctl
+- Текстовые редакторы (vim/nano)
+- Bash: переменные, циклы, условия, функции, планировщик cron
+- Управление пакетами (apt/yum), systemd
+
+**Стикеры**  
+✅ Навигация и файлы  
+✅ Права и процессы  
+✅ Bash-скрипты  
+✅ Cron, systemd  
+✅ Пакетный менеджер  
+
+---
+
+### **3. Git**  
+⏱ 2–3 недели  
+🎯 Результат: клонирую, ветвлюсь, мержу, решаю конфликты.
+
+**Подпункты:**
+- init, clone, add, commit, push, pull, fetch
+- Ветки (branch, checkout, merge, rebase)
+- Удалённые репозитории (origin, upstream)
+- Разрешение конфликтов
+- Git flow / GitHub Flow
+- .gitignore, работа с тегами
+
+**Стикеры**  
+✅ Основные команды Git  
+✅ Ветвление и слияние  
+✅ Работа с удалённым репо  
+✅ Git flow  
+
+---
+
+### **4. CI/CD**  
+⏱ 4–5 недель  
+🎯 Результат: собираю простой пайплайн (тест → сборка → деплой).
+
+**Подпункты:**
+- Концепции CI/CD (непрерывная интеграция, доставка, развёртывание)
+- Настройка GitLab CI / GitHub Actions (или Jenkins)
+- Пайплайн: линтер → юнит-тесты → сборка → артефакты → деплой на staging
+- Переменные окружения, секреты
+- Артефакты и кэширование
+
+**Стикеры**  
+✅ Пайплайн из 4 стадий  
+✅ Переменные и секреты  
+✅ Артефакты  
+✅ Деплой на staging  
+
+---
+
+### **5. Docker**  
+⏱ 3–4 недели  
+🎯 Результат: оборачиваю любое приложение в контейнер.
+
+**Подпункты:**
+- Dockerfile (FROM, RUN, COPY, EXPOSE, CMD, ENTRYPOINT)
+- Образы, контейнеры, Docker Hub
+- docker-compose (многоконтейнерные приложения)
+- Volumes (персистентность), сети (bridge, host, none)
+- Best practices (многостадийная сборка, .dockerignore)
+
+**Стикеры**  
+✅ Написал Dockerfile  
+✅ Запустил контейнер  
+✅ Собрал compose (app + db)  
+✅ Volumes и сети  
+
+---
+
+### **6. Kubernetes**  
+⏱ 8–12 недель (самый объёмный этап)  
+🎯 Результат: деплою, масштабирую, обновляю приложение в k8s.
+
+**Подпункты:**
+- Архитектура: Pod, Node, Control Plane, etcd, kubelet
+- kubectl basics (get, describe, logs, exec, apply, delete)
 - Pod, Deployment, ReplicaSet, Service (ClusterIP, NodePort, LoadBalancer)
-- ConfigMap, Secret (хранение конфигураций)
-- Ingress (внешний доступ)
-- PersistentVolume (PV) и PersistentVolumeClaim (PVC)
-- Namespaces (изоляция)
-- livenessProbe / readinessProbe
-- Horizontal Pod Autoscaler (HPA)
-- Helm (пакетный менеджер для K8s)
-```
+- ConfigMap, Secret, Ingress, Namespace
+- Rolling update, readiness/liveness probes, HPA (Horizontal Pod Autoscaler)
+- Хранение: PersistentVolume, PersistentVolumeClaim, StorageClass
+- Helm (чарты, шаблоны, управление релизами)
 
-**🎓 Проект:**
-Развернуть микросервисное приложение (например, микроблог) в minikube с Ingress, Secrets и автоподнятием подов.
-
----
-
-## 🔄 CI/CD (Непрерывная интеграция и доставка) — 3–4 месяца
-
-### GitLab CI / GitHub Actions
-
-```yaml
-# .gitlab-ci.yml или .github/workflows
-stages:
-  - build
-  - test
-  - deploy
-
-build:
-  stage: build
-  script:
-    - docker build -t myapp .
-  only:
-    - main
-
-deploy:
-  stage: deploy
-  script:
-    - kubectl apply -f k8s/
-  environment: production
-```
-
-**🎓 Проект:**
-Настроить пайплайн, который при пуше в main:
-1. Собирает Docker-образ
-2. Пушит его в GitLab/GitHub Container Registry
-3. Деплоит на Kubernetes
-
-### Jenkins (всё ещё нужен в корпорациях)
-
-```groovy
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps { sh 'make' }
-        }
-        stage('Test') {
-            steps { sh 'make test' }
-        }
-        stage('Deploy') {
-            steps { sh 'make deploy' }
-        }
-    }
-}
-```
-
-### ArgoCD (GitOps)
-
-```yaml
-# Аргументированное объявление желаемого состояния
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: myapp
-spec:
-  source:
-    repoURL: https://github.com/me/myapp-config
-    path: overlays/production
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: production
-  syncPolicy:
-    automated: {}
-```
+**Стикеры**  
+✅ kubectl get pods  
+✅ Развернул Deployment  
+✅ Настроил Service + Ingress  
+✅ ConfigMap + Secrets  
+✅ Probes (liveness/readiness)  
+✅ Helm chart  
 
 ---
 
-## 🏗️ Инфраструктура как код (IaC) — 2–3 месяца
+### **7. Infrastructure as Code (Terraform) + Configuration Management (Ansible)**  
+⏱ 5–7 недель  
+🎯 Результат: создаю инфраструктуру кодом и настраиваю серверы.
 
-### Terraform / OpenTofu
+**Подпункты:**
+- **Terraform**: HCL, провайдеры (AWS/GCP), ресурсы, state, plan/apply/destroy, переменные, output, модули
+- **Ansible**: inventory, ad-hoc commands, playbooks, roles, переменные, handlers, vault (шифрование секретов)
+- Совместное использование: Terraform создаёт VM → Ansible настраивает её
 
-```hcl
-# main.tf
-provider "aws" {
-  region = "us-east-1"
-}
-
-resource "aws_instance" "web" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "WebServer"
-  }
-}
-
-resource "aws_s3_bucket" "data" {
-  bucket = "my-unique-bucket-name"
-}
-```
-
-**🎓 Проект:**
-Развернуть VPC, EC2, RDS и S3 в AWS с помощью Terraform.
-
-### Провайдеры: AWS / Azure / GCP (хотя бы один глубоко)
-
-**AWS (самый популярный):**
-- EC2, S3, VPC, IAM
-- RDS, Lambda, EKS, CloudFormation
-- CloudWatch, Route53, ALB/ELB
-
-**🎓 Сертификация:**
-AWS Certified Solutions Architect — Associate
+**Стикеры**  
+✅ Terraform init/plan/apply  
+✅ Remote state (S3/backend)  
+✅ Модуль Terraform  
+✅ Ansible playbook (nginx)  
+✅ Роль в Ansible  
 
 ---
 
-## 🔍 Мониторинг и Логирование — 2–3 месяца
+### **8. Мониторинг и логи**  
+⏱ 4–5 недель  
+🎯 Результат: настроил сбор метрик и логов, сделал дашборд.
 
-### Prometheus + Grafana
+**Подпункты:**
+- **Prometheus**: метрики, target labels, exporters (node, blackbox)
+- **Grafana**: подключение datasource, дашборды, алерты
+- **ELK / Loki**: сбор и просмотр логов
+- Метрики контейнеров и k8s (cAdvisor, kube-state-metrics)
 
-```yaml
-# prometheus.yml
-scrape_configs:
-  - job_name: 'kubernetes-pods'
-    kubernetes_sd_configs:
-      - role: pod
-```
-
-**Метрики:**
-- CPU, Memory, Disk, Network
-- Пользовательские метрики (например, количество активных пользователей)
-
-```promql
-# Примеры запросов PromQL
-rate(http_requests_total[5m])
-node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes
-```
-
-### Loki + Promtail (логирование)
-
-```yaml
-# Loki: легковесная альтернатива ELK
-- Агрегация логов со всех подов
-- Поиск по логам через LogQL
-```
-
-### OpenTelemetry (трассировка)
-
-```python
-# Автоматическое отслеживание запросов через сервисы
-from opentelemetry import trace
-tracer = trace.get_tracer(__name__)
-
-with tracer.start_as_current_span("my-operation"):
-    # ваш код
-    pass
-```
-
-**🎓 Проект:**
-Настроить дашборд в Grafana с метриками Kubernetes-кластера и алертами в Telegram/Slack.
+**Стикеры**  
+✅ Prometheus собирает метрики  
+✅ Дашборд Grafana (CPU, RAM)  
+✅ Алерт по CPU  
+✅ Централизованные логи (Loki или ELK)  
 
 ---
 
-## 🔐 Безопасность (DevSecOps) — 2 месяца
+### **9. Облачные провайдеры**  
+⏱ 6–8 недель  
+🎯 Результат: поднимаю инфраструктуру в облаке + CI/CD деплой.
 
-### SAST / DAST сканеры
+**Подпункты (выбрать один провайдера как основной):**
+- **AWS**: IAM, EC2, VPC, S3, RDS, EKS, ALB, Route53
+- **Azure**: Resource Manager, VM, AKS, Blob Storage, VNet
+- **GCP**: Compute Engine, GKE, Cloud Storage, VPC, IAM
+- Интеграция: Terraform создаёт ресурсы → CI/CD деплоит приложение в облако
 
-```yaml
-# В CI/CD добавляем проверки безопасности
-- Trivy (сканирование Docker-образов)
-- Snyk (зависимости)
-- OWASP ZAP (пентест API)
-- SonarQube (качество кода)
-```
-
-### Secrets Management
-
-```bash
-# HashiCorp Vault — золотой стандарт
-vault kv put secret/myapp db_password=supersecret
-vault kv get secret/myapp
-```
-
-### Policy as Code
-
-```rego
-# Open Policy Agent (OPA)
-deny[msg] {
-  input.method == "POST"
-  not input.user.role == "admin"
-  msg = "Only admins can POST"
-}
-```
-
-### Техники безопасности в K8s
-
-- Network Policies (ограничение трафика между подами)
-- Pod Security Standards
-- Service Mesh (Istio / Linkerd) — mTLS, авторизация
+**Стикеры**  
+✅ Создал VM в облаке по Terraform  
+✅ Настроил VPC/подсети  
+✅ Облачный managed Kubernetes (EKS/GKE/AKS)  
+✅ Деплой из CI/CD в облако  
 
 ---
 
-## ☁️ Облака и провайдеры (выбрать один основной)
+### **10. Безопасность, бэкапы, продвинутые темы**  
+⏱ 4–6 недель  
+🎯 Результат: автоматизирую сканирование секретов, vulnerability scanning, бэкапы.
 
-### AWS (70% вакансий)
+**Подпункты:**
+- Безопасность: SAST/DAST (Trivy, SonarQube), проверка Docker образа
+- Secrets management (HashiCorp Vault, или облачные Key Vaults)
+- Резервное копирование etcd, БД, PV в k8s (Velero)
+- GitOps (ArgoCD или Flux)
+- Service Mesh (istio/linkerd) – обзорно
 
-| Сервис | Назначение |
-|--------|------------|
-| EC2 | Виртуальные серверы |
-| S3 | Объектное хранилище |
-| VPC | Виртуальная сеть |
-| IAM | Управление доступом |
-| RDS | Управляемая БД |
-| EKS | Управляемый Kubernetes |
-| Lambda | Serverless функции |
-
-### Альтернативы: Azure / GCP
-
----
-
-## 🧩 Дополнительные технологии (по желанию)
-
-| Технология | Для чего |
-|------------|----------|
-| 🐧 **Ansible** | Управление конфигурациями (без агентов) |
-| 🔄 **Packer** | Создание кастомных образов VM/контейнеров |
-| 📦 **Helm** | Пакетный менеджер для K8s |
-| 🎭 **Istio / Linkerd** | Service Mesh (трафик, безопасность) |
-| 🤖 **Terraform CDK** | IaC на TypeScript/Python |
-| 🧪 **Terratest** | Тестирование Terraform кода |
+**Стикеры**  
+✅ Trivy scan в CI  
+✅ Vault для секретов  
+✅ Velero backup k8s  
+✅ ArgoCD синхронизирует Git с кластером  
 
 ---
 
-## 🗓️ План обучения по месяцам (минимум 9–12 месяцев)
+## 🧭 Карта прогресса (в виде сводной таблицы)
 
-### Месяц 1–2: 🐧 Фундамент
-- [ ] Linux (Ubuntu) — базовые команды, файловая система, процессы
-- [ ] Bash scripting — автоматизация рутины
-- [ ] Git — полный цикл работы с репозиториями
-- [ ] Сети — OSI, DNS, HTTP, SSH, CIDR
-- [ ] Python — основы, работа с файлами, requests
-
-### Месяц 3–4: 🐳 Контейнеризация
-- [ ] Docker — образы, контейнеры, volumes, сети, compose
-- [ ] Docker Registry — публикация образов
-- [ ] Kubernetes — основные объекты (Pod, Deployment, Service, Ingress)
-- [ ] minikube / kind — локальный кластер
-- [ ] Helm — установка приложений чартами
-
-### Месяц 5–6: 🔄 CI/CD
-- [ ] GitLab CI / GitHub Actions — пайплайны
-- [ ] Тестирование в пайплайнах (unit, integration, e2e)
-- [ ] ArgoCD — GitOps для Kubernetes
-- [ ] Jenkins (опционально, для legacy проектов)
-
-### Месяц 7–8: 🏗️ Облака + IaC
-- [ ] AWS (EC2, S3, VPC, IAM, RDS)
-- [ ] Terraform — написание и применение конфигураций
-- [ ] Terraform state (remote backend)
-- [ ] Развертывание полноценного окружения через Terraform
-
-### Месяц 9–10: 📊 Мониторинг + Логи
-- [ ] Prometheus — сбор метрик
-- [ ] Grafana — дашборды и алерты
-- [ ] Loki — логирование
-- [ ] OpenTelemetry — трассировка
-
-### Месяц 11–12: 🔐 Безопасность + Продвинутые темы
-- [ ] Trivy, Snyk — сканирование уязвимостей
-- [ ] HashiCorp Vault — управление секретами
-- [ ] Network Policies в Kubernetes
-- [ ] Service Mesh (Linkerd / Istio)
+| Блок | Тема | Примерное время | Стикеров |
+|------|------|----------------|-----------|
+| 1 | ОС и сети | 4–5 нед | 4 |
+| 2 | Linux + Bash | 6–8 нед | 5 |
+| 3 | Git | 2–3 нед | 4 |
+| 4 | CI/CD | 4–5 нед | 4 |
+| 5 | Docker | 3–4 нед | 4 |
+| 6 | Kubernetes | 8–12 нед | 7 |
+| 7 | Terraform + Ansible | 5–7 нед | 5 |
+| 8 | Мониторинг (Prometheus+Grafana) | 4–5 нед | 4 |
+| 9 | Облака | 6–8 нед | 4 |
+| 10 | Безопасность, GitOps, бэкапы | 4–6 нед | 4 |
+| **Итого** | **≈ 46–63 недели** | **~1 год (при ~15 ч/нед)** | **45 стикеров** |
 
 ---
 
-## ✅ Проекты для портфолио (обязательны!)
+## 🧩 Рекомендации по процессу
 
-1. **Чат-приложение** с реальным обменом сообщениями, развёрнутое через GitLab CI на Kubernetes с Prometheus + Grafana.
-
-2. **Сайт на WordPress** с полной инфраструктурой в AWS:
-   - Terraform → VPC, EC2, RDS, S3
-   - Docker Compose для локальной разработки
-   - GitHub Actions для деплоя
-
-3. **Микросервисная архитектура** (например, интернет-магазин на FastAPI + React) с:
-   - Helm-чартами
-   - ArgoCD (GitOps)
-   - Мониторингом и алертами
-
-4. **Автоматизация бекапов** в S3 с периодичностью, отправкой уведомлений и проверкой целостности.
-
----
-
-## 📚 Лучшие ресурсы 2026
-
-### Книги
-📖 "The DevOps Handbook" (Kim, Humble)  
-📖 "Kubernetes: The Hard Way" (Kelsey Hightower)  
-📖 "Terraform: Up & Running" (Yevgeniy Brikman)  
-📖 "Site Reliability Engineering" (Google) — бесплатно онлайн
-
-### Курсы (бесплатные)
-🎥 **TechWorld with Nana** — YouTube (Docker, K8s, CI/CD)  
-🎥 **DevOps Journey** — YouTube  
-📘 **KodeKloud** (много бесплатных тем)  
-📘 **Roadmap.sh/devops** — интерактивная карта
-
-### Практика
-🔧 **Katacoda / Killercoda** — интерактивные сценарии  
-🔧 **Advent of Code** — алгоритмические задачи на Python  
-🔧 **Civo.com** — бесплатный K8s кластер на 1 час
-
----
-
-## 🎖️ Сертификации (для резюме)
-
-| Уровень | Сертификация |
-|---------|---------------|
-| Начальный | AWS Cloud Practitioner |
-| Средний | **CKA** (Certified Kubernetes Administrator) |
-| Продвинутый | **AWS Certified DevOps Engineer** |
-| Экспертный | **HashiCorp Certified: Terraform Associate** |
-
----
-
-## 💼 Что писать в резюме DevOps-инженера
-
-```markdown
-## Технологии
-🐧 Linux (Ubuntu, CentOS)
-🐍 Python / Bash
-🐳 Docker / Docker Compose
-☸️ Kubernetes (CKA in progress)
-📦 Helm, ArgoCD
-🔧 Terraform (OpenTofu)
-☁️ AWS (EC2, S3, VPC, IAM, RDS)
-🤖 GitLab CI / GitHub Actions
-📊 Prometheus + Grafana
-🔐 Trivy, Vault
-📝 Git, GitHub/GitLab
-
-## Проекты (пример)
-✅ Настроил GitOps для K8s кластера через ArgoCD (30+ микросервисов)
-✅ Оптимизировал пайплайн CI/CD, сократив время деплоя с 15 до 4 минут
-✅ Разработал Terraform модули для AWS инфраструктуры (prod/stage)
-✅ Внедрил мониторинг и алерты, что снизило MTTR на 40%
-```
-
----
-
-## 🧠 Главные советы 2026 года
-
-1. **Не учи всё сразу** — выбери стек: AWS + Terraform + K8s + GitLab CI + Prometheus.
-2. **Практика каждый день** — 30 минут теории, 1 час практики.
-3. **Заведи блог или GitHub** — покажи свои проекты (работодатели смотрят).
-4. **Участвуй в Open Source** — хотя бы доку в популярных проектах.
-5. **Следи за AI-тулами** — Copilot, Cursor AI сильно ускоряют рутину (но не заменяют понимание).
-
----
-
-> 🚀 **DevOps — это не про инструменты, а про автоматизацию, надёжность и скорость доставки ценности пользователю.**
-
-**Удачи на пути! 🎉**
-```
+1. **Клей стикеры на физическую/виртуальную доску** (Trello, Notion, Miro). Перемещай в "Done" после выполнения подпункта.
+2. Для **K8s, Terraform, CI/CD** обязательно делай проекты (свой TODO-приложение, блог на Hugo в контейнерах и т.д.).
+3. Тайминг – **ориентировочный**. Если работаешь админом или разработчиком, многие блоки пройдут быстрее.
+4. **Сертификации** как цель (CKA, Terraform Associate, AWS/Azure DevOps Expert) — увеличат тайминг, но добавят структуру.
 
 
